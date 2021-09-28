@@ -1,0 +1,13 @@
+/.vscode
+/assets
+/datastore
+/example.py
+/notifications
+/plot.jpg
+/plotting
+/prod1.py
+/strategy
+/test1.py
+/test2.py
+/workspace.code-workspace
+/__pycache__
