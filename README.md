@@ -4,10 +4,11 @@
     <img src="assets/icon.jpg" alt="Logo" width="200" height="200">
   </a>
 
-  <h3 align="center">Octopus</h3>
+  <h3 align="center">Octopus Trading Bot</h3>
 
   <p align="center">
-    Algorithmic Swing Trading, Scanning, and Backtesting. Written in Python, for use with the Interactive Brokers TWS API.
+    Algorithmic Swing Trading, Scanning, and Backtesting. 
+    Written in Python, for use with the Interactive Brokers TWS API.
 </p>
 
 
@@ -41,15 +42,15 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-This project is an algorithmic trading framework, initially for swing trading against companies which have recently reported earnings.
+This project is an algorithmic trading framework, built for swing trading stocks which have recently reported earnings.
 
-Inspired by the trading methods of <a href="https://qullamaggie.com/">Kristjan Kullamägi</a> [@Qullamaggie](https://twitter.com/Qullamaggie), this Bot is inteded to provide an algorithmic trading framework compatable with the swing trading methods taught by Kris.
+Inspired by the trading methods of <a href="https://qullamaggie.com/">Kristjan Kullamägi</a> (Twitter: [@Qullamaggie](https://twitter.com/Qullamaggie)), this Bot is inteded to provide an algorithmic trading framework compatable with some of the strategies taught by Kris.
 
-The general concept, is that this bot will monitor stocks as they report earnings, and will look for signals to either buy or sell stocks, based on technical anaylsis.
+The general concept, is that this bot will monitor stocks as they report earnings, and will look for buy and sell signals, based on technical anaylsis.
 
-The bot allows for different strategies to be back-tested against, and also to scan for the best past earners in order to identify what stocks were the best performers for research purposes.
+The bot allows for different strategies to be back-tested against, and also to scan for the best past earners in order to identify what stocks were the best historic performers for research purposes.
 
-The bot is setup to connect to Discord, and/or Telegram, and will send real-time updates as stocks are bought, or sold. In addition, it can identify when stocks have broken out.
+The bot is setup to connect to Discord, and/or Telegram, and will send real-time updates as stocks are bought, or sold (Or purely in an informative way). In addition, it can identify when stocks have broken out.
 
 The project uses:
 * Python 3.9+
@@ -61,15 +62,15 @@ The project uses:
 
 ### Built With
 
-* [ib_insync](https://github.com/erdewit/ib_insync)
-* [pandas](https://pandas.pydata.org/)
-* [pandas-ta](https://github.com/twopirllc/pandas-ta)
-* [sqlalchemy](https://www.sqlalchemy.org/)
-* [aiogram](https://docs.aiogram.dev/en/latest/)
-* [discord.py](https://discordpy.readthedocs.io/en/stable/)
-* [matplotlib](https://github.com/matplotlib)
-* [mplfinance](https://github.com/matplotlib/mplfinance)
-* [yahoo_fin](https://github.com/atreadw1492/yahoo_fin)
+* [ib_insync](https://github.com/erdewit/ib_insync) - Interactive Brokers TWS Client
+* [pandas](https://pandas.pydata.org/) - Data Analytics
+* [pandas-ta](https://github.com/twopirllc/pandas-ta) - Technical Analysis
+* [sqlalchemy](https://www.sqlalchemy.org/) - SQL Database ORM
+* [aiogram](https://docs.aiogram.dev/en/latest/) - Telegram Bot
+* [discord.py](https://discordpy.readthedocs.io/en/stable/) - Discord Bot
+* [matplotlib](https://github.com/matplotlib) - Chart Plotting
+* [mplfinance](https://github.com/matplotlib/mplfinance) - General Plotting
+* [yahoo_fin](https://github.com/atreadw1492/yahoo_fin) - Yahoo Finance
 
 
 <!-- GETTING STARTED -->
