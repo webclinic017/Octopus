@@ -1,3 +1,5 @@
+*__pycache__
+/.venv
 /.vscode
 /plot.jpg
 /prod1.py
@@ -5,4 +7,4 @@
 /test2.py
 /workspace.code-workspace
 /datastore/*.db
-/__pycache__
+/datastore/
