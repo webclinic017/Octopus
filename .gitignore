@@ -2,10 +2,12 @@
 /.venv
 /.vscode
 /plot.jpg
-/prod1.py
-/test1.py
-/test2.py
 /workspace.code-workspace
 /datastore/*.db
 /datastore/
+
+
 notes.txt
+prod1.py
+test1.py
+test2.py
