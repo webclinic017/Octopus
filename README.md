@@ -7,34 +7,32 @@
   <h3 align="center">Octopus</h3>
 
   <p align="center">
-    Algorithmic Swing Trading and Scanning    
-  </p>
+    Algorithmic Swing Trading, Scanning, and Backtesting. Written in Python, for use with the Interactive Brokers TWS API.
 </p>
 
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
+
+<summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+<ol>
+<li>
+    <a href="#about-the-project">About The Project</a>
+    <ul>
+    <li><a href="#built-with">Built With</a></li>
+    </ul>
+</li>
+<li>
+    <a href="#getting-started">Getting Started</a>
+    <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#installation">Installation</a></li>
+    </ul>
+</li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#roadmap">Roadmap</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ol>
 
 
 
@@ -43,14 +41,35 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-test
+This project is an algorithmic trading framework, initially for swing trading against companies which have recently reported earnings.
+
+Inspired by the trading methods of <a href="https://qullamaggie.com/">Kristjan Kullamägi</a> [@Qullamaggie](https://twitter.com/Qullamaggie), this Bot is inteded to provide an algorithmic trading framework compatable with the swing trading methods taught by Kris.
+
+The general concept, is that this bot will monitor stocks as they report earnings, and will look for signals to either buy or sell stocks, based on technical anaylsis.
+
+The bot allows for different strategies to be back-tested against, and also to scan for the best past earners in order to identify what stocks were the best performers for research purposes.
+
+The bot is setup to connect to Discord, and/or Telegram, and will send real-time updates as stocks are bought, or sold. In addition, it can identify when stocks have broken out.
+
+The project uses:
+* Python 3.9+
+* Interactive Brokers TWS
+* SQLLite database to cache historic OHLCV data and Earnings Calendar data
+* Discord and Telegram Bot to receieve notifications and interact with the bot
+
+
 
 ### Built With
 
-* []()
-* []()
-* []()
-
+* [ib_insync](https://github.com/erdewit/ib_insync)
+* [pandas](https://pandas.pydata.org/)
+* [pandas-ta](https://github.com/twopirllc/pandas-ta)
+* [sqlalchemy](https://www.sqlalchemy.org/)
+* [aiogram](https://docs.aiogram.dev/en/latest/)
+* [discord.py](https://discordpy.readthedocs.io/en/stable/)
+* [matplotlib](https://github.com/matplotlib)
+* [mplfinance](https://github.com/matplotlib/mplfinance)
+* [yahoo_fin](https://github.com/atreadw1492/yahoo_fin)
 
 
 <!-- GETTING STARTED -->
@@ -60,7 +79,6 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
