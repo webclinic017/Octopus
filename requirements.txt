@@ -1,0 +1,9 @@
+ib-insync==0.9.66
+pandas==1.3.3
+pandas-ta==0.3.14b0
+sqlalchemy==1.4.25
+aiogram==2.15
+discord.py==1.7.3
+matplotlib==3.4.3
+mplfinance==0.12.7a17
+yahoo_fin==0.8.9.1
