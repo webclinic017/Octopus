@@ -21,11 +21,13 @@
 
 This project is an algorithmic trading framework, built for swing trading stocks which have recently reported earnings.
 
-Inspired by the trading methods of Kristjan Kullamägi, found at any of the following locations
+Inspired by the trading methods of Kristjan Kullamägi
 
-Twitter: [@Qullamaggie](https://twitter.com/Qullamaggie)
-Twitch: [https://www.twitch.tv/qullamaggie](twitch.tv/qullamaggie)
-Website: [https://qullamaggie.com/](qullamaggie.com)
+* Twitter: [@Qullamaggie](https://twitter.com/Qullamaggie)
+
+* Twitch: [https://www.twitch.tv/qullamaggie](twitch.tv/qullamaggie)
+
+* Website: [https://qullamaggie.com/](qullamaggie.com)
 
 
 This Bot is inteded to provide an algorithmic trading framework compatable with some of the strategies taught by Kris.
