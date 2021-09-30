@@ -1,11 +1,11 @@
 <br />
 <p align="center">
   
-  <h3 align="center">Octopus Trading Bot</h3>
-
   <a href="https://github.com/mpainenz/octopus">
     <img src="assets/icon.jpg" alt="Logo" width="200" height="200">
   </a>
+  
+  <h3 align="center">Octopus Trading Bot</h3>
 
   <p align="center">
     Algorithmic Swing Trading, Scanning, and Backtesting. 
