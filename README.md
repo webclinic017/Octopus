@@ -46,6 +46,8 @@ This project is an algorithmic trading framework, built for swing trading stocks
 
 Inspired by the trading methods of <a href="https://qullamaggie.com/">Kristjan Kullamägi</a> (Twitter: [@Qullamaggie](https://twitter.com/Qullamaggie)), this Bot is inteded to provide an algorithmic trading framework compatable with some of the strategies taught by Kris.
 
+This bot is under development, and you can find me (Mark) on the [Qullamaggie Discord[(https://discord.gg/fFyMrapwfd)] or on Twitter: [@Kynuren](https://twitter.com/Kynuren)
+
 The general concept, is that this bot will monitor stocks as they report earnings, and will look for buy and sell signals, based on technical anaylsis.
 
 The bot allows for different strategies to be back-tested against, and also to scan for the best past earners in order to identify what stocks were the best historic performers for research purposes.
