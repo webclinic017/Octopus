@@ -19,34 +19,32 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-This project is an algorithmic trading framework, built for swing trading stocks which have recently reported earnings.
+This project is an algorithmic stock trading framework, currently built for stocks which have recently reported earnings, but intended to expand more broadly.
 
-Inspired by the trading methods of Kristjan Kullamägi
+Inspired by the swing trading methods of Kristjan Kullamägi
 
 * Twitter: [@Qullamaggie](https://twitter.com/Qullamaggie)
+* Twitch: [twitch.tv/qullamaggie](ttps://www.twitch.tv/qullamaggie)
+* Website: [qullamaggie.com](https://qullamaggie.com)
 
-* Twitch: [https://www.twitch.tv/qullamaggie](twitch.tv/qullamaggie)
+Kris has shared his knowledge of swing trading on [https://www.twitch.tv/qullamaggie](twitch.tv/qullamaggie), and has gathered a large following. 
+If you want to learn about Swing trading, his <a href="https://qullamaggie.com/">website</a> is a good starting point.
 
-* Website: [https://qullamaggie.com/](qullamaggie.com)
-
-
-This Bot is inteded to provide an algorithmic trading framework compatable with some of the strategies taught by Kris.
-
-Kris has shared his very successful trading methods on [https://www.twitch.tv/qullamaggie](twitch.tv/qullamaggie), and has gathered a large following. If you want to learn about Swing trading, his <a href="https://qullamaggie.com/">website</a> is a good starting point.
-
-This bot is under development, and you can find me (Mark) on the [https://discord.gg/fFyMrapwfd](qullamaggie Discord server), or on Twitter: [@Kynuren](https://twitter.com/Kynuren). The bot is not yet ready to make automated trades, but has matured enough to be useful in other ways.
+This bot is under development, and you can find me (Mark) on the [qullamaggie Discord server](https://discord.gg/fFyMrapwfd), or on Twitter: [@Kynuren](https://twitter.com/Kynuren). 
+The bot is not yet ready to make automated trades, but has matured enough to be useful in other ways.
 
 The general concept, is that this bot constantly run, and monitor any stock as they report earnings. Using a customizable strategy, the bot and will look for buy and sell signals, based on technical anaylsis. A user of this Bot can take their strategy, and Back Test it against the historical chart and Earnings calendar data. In that way, adjusting parameters such as Average Daily Range, Daily Volume, or other criteria, a person should be able to scan a wider range of stocks than might be possible manually. Another use, is this Bot can help to scan identify stocks that a Swing trader may be interested in.
 
 The bot allows for different strategies to be back-tested against, and also to scan for the best past earners in order to identify what stocks were the best historic performers for research purposes.
 
-The bot is setup to connect to Discord, and/or Telegram, and will send real-time updates as stocks are bought, or sold (Or purely in an informative way). In addition, it can identify when stocks have broken out, or simply provide a chart on request from your Phone. 
+The bot can talk to a specifed Discord Channel, and/or Telegram Chat. It will send real-time updates about stocks. This can currently include information about Stocks that break out pre-market (and more conditions to follow soon).
+ 
 
 The project uses:
 * Python 3.9+
 * Interactive Brokers TWS
 * SQLLite database to cache historic OHLCV data and Earnings Calendar data
-* Discord and Telegram Bot to receieve notifications and interact with the bot
+* Discord and Telegram Bot to receieve notifications and interactions
 
 
 ### Built With
@@ -73,6 +71,13 @@ The project uses:
     </ul>
 </li>
 <li><a href="#basic-scan">Basic Scanning and Backtesting</a></li>
+<li>
+    <a href="#bot-notification">Bot Notifications</a>
+    <ul>
+    <li><a href="#telegram">Telegram</a></li>
+    <li><a href="#discord">Discord</a></li>
+    </ul>
+</li>
 <li><a href="#roadmap">Roadmap</a></li>
 <li><a href="#contributing">Contributing</a></li>
 <li><a href="#license">License</a></li>
@@ -186,16 +191,32 @@ Daily Chart Notification:
 
 ## Historic Data
 
-Back Testing relies on OHLCV candlestick data for the stocks reporting earnings, and a fair amount of historic data to populate moving average data. 
+Speed up Back Testing by optionally download 2021 data here [market_data.db](https://drive.google.com/file/d/1Nc5SdRD62OsX63P6cqfQgEI8Yj1tgiQE/view?usp=sharing)
 
-The Interactive Brokers API is quite slow, so expect the first runs of the bot to be slow. As you repeat a back test, the second time will be much quicker, as the data will be downloaded and cached.
-
-To speed up Back Testing, you can optionally download 2021 data here ([https://drive.google.com/file/d/1Nc5SdRD62OsX63P6cqfQgEI8Yj1tgiQE/view?usp=sharing](market_data.db), and simply copy that file into the \datastore directory.
+Download that file into the \datastore directory, and replace the existing `market_data.db` if it already exists (Automatically created at runtime).
 
 
 
+<!-- BOT NOTIFICATIONS -->
+## Bot Notifications
 
+Telegram and Discord are two popular, cross-platform chata applications you can use on your Device or PC to receive notifications, or issue commands to the bot.
 
+### Telegram
+
+To use Telegram, from a Telegram chat, you must setup a new bot. Bots are free, and involve simple commands to get going.
+
+Read Section 6. in the [official Telegram Bot Documentation[(https://core.telegram.org/bots)] to one setup.
+
+Next, modify the Settings (See example.py in the root of the project) of the bot to include the Token you generate, and the Chat ID of a Channel or Group the bot has access to.
+
+Once connected, use the `/Help` command to get started.
+
+<img src="assets/TelegramHelp.JPG" alt="Telegram Commands">
+
+### Discord
+
+TODO
 
 
 
