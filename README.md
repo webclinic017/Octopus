@@ -97,7 +97,7 @@ Follow the instructions here to [Enable the TWS API](https://interactivebrokers.
    ```
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Basic Scan
 
 From the base directory, the [examply.py](examply.py) file demonstrates how to run a bot instance.
 
@@ -108,34 +108,16 @@ The bot can be as simple as the following code block:
 from octopus import Octopus
 from strategy.scan_earners import StrategyScanEarners
 
-
 settings = {
-
-    # Give each instance of the bot, a unique name.
-    "INSTANCEID": "Example Name",
-
-    # Trader Workstation (TWS) Settings
+    "INSTANCEID": "Demo",
     "TWS":
         {
             "HOST": "127.0.0.1",
-            "PORT": 7496, # Paper defaults to 7497
-            "CLIENTID": 1000, #this needs to be a unique value for each bot instance. Chose a widely different value between bot instances, as each time a connection is retried, it's incremented by one.
-            "MAXRETRY": 100
+            "PORT": 7496,
+            "CLIENTID": 1,
+            "MAXRETRY": 1
         },
-
-    # Discord Notifications
-    "DISCORD":
-        {
-            "TOKEN": "", # You can optionally setup a Discord Bot, and insert it's Token here to have Discord Chat Notifications enabled
-            "CHANNEL": 0 # Channel to send alerts to
-        },
-
-    # Telegram Notifications
-    "TELEGRAM":
-        {
-            "TOKEN": "", # You can optionally setup a Telegram Bot, and insert it's Token here to have Telegram Chat Notifications enabled
-            "CHANNEL": 0 # Chat to send alerts to
-        }
+}
 
 octopus = Octopus(settings)
 octopus.run(StrategyScanEarners, backTest=True, backTestDateStartStr="2021-01-1", backTestDateEndStr="2021-01-10")
@@ -155,9 +137,9 @@ If Discord or Telegram are enabled, the bot will run, and provide an output of s
 As an example output from backtesting, VOLT reported earnings on the 12th of Jan, 2021. If bought, and sold 14 days later, a 26.83% Profit is detected by the bot:
 
 
-<img src="assets/BacktestEarnings.JPG" alt="Backtest Result" width="342" height="348">
-<img src="assets/BacktestEarnings2.JPG" alt="Backtest Result Daily Chart" width="1280" height="1131">
-<img src="assets/BacktestEarnings3.JPG" alt="Backtest Result 5M Chart" width="1280" height="1131">
+<img src="assets/BacktestEarnings.JPG" alt="Backtest Result">
+<img src="assets/BacktestEarnings2.JPG" alt="Backtest Result Daily Chart">
+<img src="assets/BacktestEarnings3.JPG" alt="Backtest Result 5M Chart">
 
 
 
