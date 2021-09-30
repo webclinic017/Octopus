@@ -22,15 +22,15 @@ settings = {
     # Discord Notifications
     "DISCORD":
         {
-            "TOKEN": "", # You can setup a Discord Bot, and insert it's Token here to have Notifications enabled
-            "CHANNEL": 0
+            "TOKEN": "", # You can optionally setup a Discord Bot, and insert it's Token here to have Discord Chat Notifications enabled
+            "CHANNEL": 0 # Channel to send alerts to
         },
 
     # Telegram Notifications
     "TELEGRAM":
         {
-            "TOKEN": "", # You can setup a Telegram Bot, and insert it's Token here to have Notifications enabled
-            "CHANNEL": 0
+            "TOKEN": "", # You can optionally setup a Telegram Bot, and insert it's Token here to have Telegram Chat Notifications enabled
+            "CHANNEL": 0 # Chat to send alerts to
         }
 }
 

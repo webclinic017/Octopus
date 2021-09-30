@@ -80,10 +80,10 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+You must have an active Interactive Brokers account, and run the Trader Workstation, or IB Gateway applications on your machine. This Bot needs to use the API functionality exposed by one of those programs.
+
+Follow the instructions here to [Enable the TWS API](https://interactivebrokers.github.io/tws-api/initial_setup.html)
+
 
 ### Installation
 
@@ -91,19 +91,74 @@ To get a local copy up and running follow these simple steps.
    ```sh
    git clone https://github.com/mpainenz/octopus.git
    ```
-2. Install NPM packages
+2. Install Python packages
    ```sh
-   npm install
+   pip install -r requirements.txt
    ```
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+From the base directory, the [examply.py](examply.py) file demonstrates how to run a bot instance.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+The bot can be as simple as the following code block:
+
+
+```
+from octopus import Octopus
+from strategy.scan_earners import StrategyScanEarners
+
+
+settings = {
+
+    # Give each instance of the bot, a unique name.
+    "INSTANCEID": "Example Name",
+
+    # Trader Workstation (TWS) Settings
+    "TWS":
+        {
+            "HOST": "127.0.0.1",
+            "PORT": 7496, # Paper defaults to 7497
+            "CLIENTID": 1000, #this needs to be a unique value for each bot instance. Chose a widely different value between bot instances, as each time a connection is retried, it's incremented by one.
+            "MAXRETRY": 100
+        },
+
+    # Discord Notifications
+    "DISCORD":
+        {
+            "TOKEN": "", # You can optionally setup a Discord Bot, and insert it's Token here to have Discord Chat Notifications enabled
+            "CHANNEL": 0 # Channel to send alerts to
+        },
+
+    # Telegram Notifications
+    "TELEGRAM":
+        {
+            "TOKEN": "", # You can optionally setup a Telegram Bot, and insert it's Token here to have Telegram Chat Notifications enabled
+            "CHANNEL": 0 # Chat to send alerts to
+        }
+
+octopus = Octopus(settings)
+octopus.run(StrategyScanEarners, backTest=True, backTestDateStartStr="2021-01-1", backTestDateEndStr="2021-01-10")
+```
+
+Running the above with the Python interpretter, will use the `StrategyScanEarners` Strategy Class, located in [strategy/scan_earners.py](strategy/earnings_breakouts.py), and will run in BackTesting mode. 
+
+This mode is a dry run, and simulates what would occur when Stocks reporting earnings, are bought and sold after a short period.
+
+   ```sh
+   python example.py
+   ```
+
+
+If Discord or Telegram are enabled, the bot will run, and provide an output of stocks which gained over a certain threshold through the configured buy/sell period defined in the strategy.
+
+As an example output from backtesting, VOLT reported earnings on the 12th of Jan, 2021. If bought, and sold 14 days later, a 26.83% Profit is detected by the bot:
+
+
+<img src="assets/BacktestEarnings.JPG" alt="Backtest Result" width="342" height="348">
+<img src="assets/BacktestEarnings2.JPG" alt="Backtest Result Daily Chart" width="1280" height="1131">
+<img src="assets/BacktestEarnings3.JPG" alt="Backtest Result 5M Chart" width="1280" height="1131">
+
 
 
 
