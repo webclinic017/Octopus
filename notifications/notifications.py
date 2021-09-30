@@ -167,8 +167,7 @@ class Notifier:
         return f"{emoji}{industry}" 
 
     def _getTargetDesc(self, target):
-        cleanedLongName = target['detail'].longName.replace(".", "\.")
-        msg = f"[{target['symbol']}] {cleanedLongName} ({target['contract'].primaryExchange})"
+        msg = f"[{target['symbol']}] {target['detail'].longName} ({target['contract'].primaryExchange})"
         
         if target['detail'].industry != "":
             msg += f"\n └ {target['detail'].category} - {target['detail'].subcategory}"
@@ -176,8 +175,7 @@ class Notifier:
         return msg
 
     def _getTargetDescLong(self, target, includeGap=False):
-        cleanedLongName = target['detail'].longName.replace(".", "\.")
-        msg = f"[{target['symbol']}] {cleanedLongName} ({target['contract'].primaryExchange})"
+        msg = f"[{target['symbol']}] {target['detail'].longName} ({target['contract'].primaryExchange})"
         
         if target['detail'].industry != "":
             msg += f"\n └ {self._getIndustryDesc(target['detail'].industry)}"
@@ -185,13 +183,13 @@ class Notifier:
         
         msg += f"\n"
 
-        adrStr = "{:.1f}%".format(target['adr']).replace(".", "\.")
+        adrStr = "{:.1f}%".format(target['adr'])
         msg += f"\n ADR: {adrStr}"
 
         if includeGap:
-            gapStr = "{:.2f}%".format(target['gap_pc']).replace(".", "\.")
-            yesterdayClose = "\${:.2f}".format(target['yesterday_close']).replace(".", "\.")
-            todayOpen = "\${:.2f}".format(target['today_open']).replace(".", "\.")
+            gapStr = "{:.2f}%".format(target['gap_pc'])
+            yesterdayClose = "${:.2f}".format(target['yesterday_close'])
+            todayOpen = "${:.2f}".format(target['today_open'])
                 
             msg += "\n"
             msg += f"\n Gap: {gapStr}"
@@ -225,13 +223,10 @@ class Notifier:
                 closeDateStr = target['closeDateTime'].strftime("%Y-%m-%d %H:%M:%S")
                 msg += f"\n Close Date: {closeDateStr}"
                 msg += "\n"
-                buyPriceStr = f"${target['buyPrice']}".replace(".", "\.")
-                msg += f"\n Buy Price: {buyPriceStr}"
+                msg += f"\n Buy Price: {target['buyPrice']}"
             if 'sellPrice' in target:
-                sellPriceStr = f"${target['sellPrice']}".replace(".", "\.")
-                msg += f"\n Sell Price: {sellPriceStr}"
-                profitPCTStr = f"{target['profitPCT']}%".replace(".", "\.")
-                msg += f"\n Profit: {profitPCTStr}"
+                msg += f"\n Sell Price: {target['sellPrice']}"
+                msg += f"\n Profit: {target['profitPCT']}"
 
         return msg
 
@@ -306,7 +301,7 @@ class Notifier:
 
     def NotifyTargetGapUp(self, target):
         if self.octopus.strategy.NotifyGapUps:
-            gapUpStr = "{:.2f}".format(target['gap_pc']).replace(".", "\.")
+            gapUpStr = "{:.2f}".format(target['gap_pc'])
             msg = f"{target['symbol']} has gapped up {gapUpStr}% pre-market:"
             msg += f"\n\n{self._getTargetDescLong(target, includeGap=True)}\n"
             self.SendNotification(msg)

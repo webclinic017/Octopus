@@ -8,6 +8,7 @@ class StrategyEarningsBreakouts:
 
         self.Name = "Earnings Breakouts"
         self.BackTestFrequency = 5
+        self.BackTestValidTimes = ["10:00"]
         
         self.NotifyLoading = True
         self.NotifyStopping = True
