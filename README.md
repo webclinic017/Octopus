@@ -1,13 +1,15 @@
 <br />
 <p align="center">
+  
+  <h3 align="center">Octopus Trading Bot</h3>
+
   <a href="https://github.com/mpainenz/octopus">
     <img src="assets/icon.jpg" alt="Logo" width="200" height="200">
   </a>
 
-  <h3 align="center">Octopus Trading Bot</h3>
-
   <p align="center">
     Algorithmic Swing Trading, Scanning, and Backtesting. 
+    </br>
     Written in Python, for use with the Interactive Brokers TWS API.
 </p>
 
@@ -21,13 +23,13 @@
     </ul>
 </li>
 <li>
-    <a href="#getting-started">Getting Started</a>
+    <a href="#basic-started">Getting Started</a>
     <ul>
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#installation">Installation</a></li>
     </ul>
 </li>
-<li><a href="#usage">Usage</a></li>
+<li><a href="#basic-scan">Basic Scanning and Backtesting</a></li>
 <li><a href="#roadmap">Roadmap</a></li>
 <li><a href="#contributing">Contributing</a></li>
 <li><a href="#license">License</a></li>
@@ -100,7 +102,7 @@ Follow the instructions here to [Enable the TWS API](https://interactivebrokers.
    ```
 
 <!-- Basic Scan -->
-## Basic Scan / Backtest
+## Basic Scaning and Backtesting
 
 From the base directory, the [examply.py](examply.py) file demonstrates how to run a bot instance.
 
@@ -138,7 +140,7 @@ This mode is a dry run, and simulates what would occur when Stocks reporting ear
 If Discord or Telegram are enabled, the bot will run, and provide an output of stocks which gained over a certain threshold through the configured buy/sell period defined in the strategy.
 
 
-## Backtest / Scan Results
+### Backtest / Scan Results
 
 As backtesting occurs, notifications will occur when Stocks that adhere to the Strategies conditions are found. In the above example, only profitable trades will notify the user.
 
