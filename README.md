@@ -21,11 +21,18 @@
 
 This project is an algorithmic trading framework, built for swing trading stocks which have recently reported earnings.
 
-Inspired by the trading methods of <a href="https://qullamaggie.com/">Kristjan Kullamägi</a> (Twitter: [@Qullamaggie](https://twitter.com/Qullamaggie)), this Bot is inteded to provide an algorithmic trading framework compatable with some of the strategies taught by Kris.
+Inspired by the trading methods of Kristjan Kullamägi, found at any of the following locations
 
-Kris has shared his very successful trading methods on Twitch ([https://www.twitch.tv/qullamaggie](https://www.twitch.tv/qullamaggie)), and has gathered a large following. If you want to learn about Swing trading, his stream is fantastic.
+Twitter: [@Qullamaggie](https://twitter.com/Qullamaggie)
+Twitch: [https://www.twitch.tv/qullamaggie](twitch.tv/qullamaggie)
+Website: [https://qullamaggie.com/](qullamaggie.com)
 
-This bot is under development, and you can find me (Mark) on the [Qullamaggie Discord[(https://discord.gg/fFyMrapwfd)] or on Twitter: [@Kynuren](https://twitter.com/Kynuren). The bot is not yet ready to make automated trades, but has matured enough to be useful in other ways.
+
+This Bot is inteded to provide an algorithmic trading framework compatable with some of the strategies taught by Kris.
+
+Kris has shared his very successful trading methods on [https://www.twitch.tv/qullamaggie](twitch.tv/qullamaggie), and has gathered a large following. If you want to learn about Swing trading, his <a href="https://qullamaggie.com/">website</a> is a good starting point.
+
+This bot is under development, and you can find me (Mark) on the [https://discord.gg/fFyMrapwfd](qullamaggie Discord server), or on Twitter: [@Kynuren](https://twitter.com/Kynuren). The bot is not yet ready to make automated trades, but has matured enough to be useful in other ways.
 
 The general concept, is that this bot constantly run, and monitor any stock as they report earnings. Using a customizable strategy, the bot and will look for buy and sell signals, based on technical anaylsis. A user of this Bot can take their strategy, and Back Test it against the historical chart and Earnings calendar data. In that way, adjusting parameters such as Average Daily Range, Daily Volume, or other criteria, a person should be able to scan a wider range of stocks than might be possible manually. Another use, is this Bot can help to scan identify stocks that a Swing trader may be interested in.
 
